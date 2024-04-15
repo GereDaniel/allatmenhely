@@ -1,3 +1,11 @@
+<?php 
+require_once "includes/config_session.php";
+
+require_once "includes/dbh.inc.php";
+
+if(isset($_SESSION['email'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -150,4 +158,5 @@
 
 </body>
 
-</html>
+</html><?php
+}?>

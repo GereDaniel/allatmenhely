@@ -30,6 +30,8 @@
             <span class="text-2xl font-bold text-accent max-md:hidden">
               Admin panel</span></a>
         </div>
+       <?php echo   $_SESSION['email']
+       ?>
         <button aria-label="burgir"
           class="max-md:absolute right-10 top-8 max-md:flex hidden flex-col gap-3"
           onclick="hmenu()">
@@ -58,7 +60,7 @@
 var path = window.location.pathname;
 var page = path.split("/").pop();
 const routes = [
-  ["Kijelentkezés", "adminlogin.php"],
+  ["Kijelentkezés", "includes/logout.inc.php"],
 ];
 
 routes.map(([label, to]) => {

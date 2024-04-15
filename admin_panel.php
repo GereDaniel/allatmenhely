@@ -1,3 +1,11 @@
+<?php 
+require_once "includes/config_session.php";
+
+require_once "includes/dbh.inc.php";
+
+if(isset($_SESSION['email'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="hu-HU">
 <head>
@@ -53,14 +61,18 @@
 
     <div class="flex flex-grow">
       <div class="flex flex-col p-5 w-80 bg-primary rounded-lg m-auto min-h-[400px]">
-        <button class="rounded-md m-5 p-3 bg-accent hover:bg-[#C98927] text-xl w-69 hover:scale-105 transform active:scale-90 transition-transform">Felhasználók kezelése</button>
-
+   
         <button class="rounded-md m-5 p-3 bg-accent hover:bg-[#C98927] text-xl w-69 hover:scale-105 transform active:scale-90 transition-transform">Állatok kezelése</button>
-
-        <button class="rounded-md m-5 p-3 bg-accent hover:bg-[#C98927] text-xl w-69 hover:scale-105 transform active:scale-90 transition-transform">Hírek kezelése</button>
-
+        <form action="newsupload.php" action="POST">
+                <button class="rounded-md m-5 p-3 bg-accent hover:bg-[#C98927] text-xl w-69 hover:scale-105 transform active:scale-90 transition-transform">Hírek kezelése</button>
+</form><form action="onkentes.php" action="POST">
         <button class="rounded-md m-5 p-3 bg-accent hover:bg-[#C98927] text-xl w-69 hover:scale-105 transform active:scale-90 transition-transform">Önkéntesek</button>
-      </div>
+  </form>    </div>
     </div>
 </body>
 </html>
+<?php 
+}
+else {
+header("Location: adminlogin.php");
+}?>

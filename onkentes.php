@@ -8,6 +8,8 @@ include_once "includes/config_session.php";
 include_once "./includes/volunteer.help.php";
 include_once "includes/edit.php";
 
+
+if(isset($_SESSION['email'])) {
 echo "
 <body class='bg-[#131313]'>
     <div class='mx-40 mt-8 relative overflow-x-auto shadow-md sm:rounded-lg'>
@@ -62,4 +64,4 @@ echo "
 echo "
         </table>
     </div>
-</body>";
+</body>";}

@@ -6,6 +6,10 @@
 include_once "dbh.inc.php";
 include_once "config_session.php";
 include_once "edit.php";
+
+
+if(isset($_SESSION['email'])) {
+
     $id = $_POST['editgomb'];
      $stmt = "SELECT * FROM onkentesek WHERE id= '$id' LIMIT 1";
      $result =  mysqli_query ($conn, $stmt);
@@ -41,4 +45,4 @@ include_once "edit.php";
   
              </form>
     
-         ";
+         ";}
